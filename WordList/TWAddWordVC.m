@@ -13,9 +13,11 @@
 
 @interface TWAddWordVC ()
 
-@property (nonatomic, strong) NSArray * words;
+@property (nonatomic, strong) NSArray * filterWords;
 @property (nonatomic, strong) NSString * word;
 @property (nonatomic, strong) NSString * meaning;
+
+@property (nonatomic, weak) TWAppDelegate * appDelegate;
 
 @end
 
@@ -41,6 +43,7 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.appDelegate = (TWAppDelegate *)[UIApplication sharedApplication].delegate;
 }
 
 - (void)didReceiveMemoryWarning
@@ -58,7 +61,13 @@
 {
     if (0 == textField.tag) {
         self.word = textField.text;
+        
+        NSPredicate * pre = [NSPredicate predicateWithFormat:@"SELF beginsWith %@", self.word];
+        self.filterWords = [self.appDelegate.wordsList filteredArrayUsingPredicate:pre];
+        [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:1] withRowAnimation:UITableViewRowAnimationFade];
+        [textField becomeFirstResponder];
     }
+    
     if (1 == textField.tag) {
         self.meaning = textField.text;
     }
@@ -74,7 +83,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     if (0 == section) return 3;
-    if (1 == section) return [self.words count];
+    if (1 == section) return [self.filterWords count];
     
     return 0;
 }
@@ -99,7 +108,7 @@
     }
     if (1 == indexPath.section) {
         cell = [tableView dequeueReusableCellWithIdentifier:@"wordListCell"];
-        cell.textLabel.text = [self getWordInfo:self.words[indexPath.row]];
+        cell.textLabel.text = [self getWordInfo:self.filterWords[indexPath.row]];
     }
     
     // Configure the cell...
@@ -159,16 +168,25 @@
 - (IBAction)addWord:(id)sender {
     NSLog(@"%@:%@", self.word, self.meaning);
     
-    NSString * prompt = nil;
-    BOOL valid = TRUE;
-    if (0 == [self.word length] || 0 == [self.meaning]) {
-        valid = FALSE;
-        prompt = @"单词和词义都不能为空。";
-        UIAlertView
+    if (0 == [self.word length] || 0 == [self.meaning length]) {
+        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"数据有误" message:@"单词和词义都不能为空。" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+        [alert show];
+        return;
     }
     //检查单词是否重复了
+    if (NSNotFound != [self.appDelegate.wordsList indexOfObject:self.word]) {
+        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"数据有误" message:@"该单词已经存在。" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+        [alert show];
+        return;
+    }
     
     //保存单词
+    NSManagedObjectContext * context = self.appDelegate.managedObjectContext;
+    NSManagedObject * obj = [NSEntityDescription insertNewObjectForEntityForName:@"Words" inManagedObjectContext:context];
+    [obj setValue:self.word forKey:@"word"];
+    [obj setValue:self.meaning forKey:@"meaning"];
+    [self.appDelegate saveContext];
+    [self.appDelegate.wordsList addObject:self.word];
     
     //清空
     self.word = @"";

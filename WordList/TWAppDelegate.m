@@ -31,7 +31,7 @@
 - (NSManagedObjectModel *) managedObjectModel
 {
     if (nil == _managedObjectModel) {
-        NSURL * modelURL = [[NSBundle mainBundle] URLForResource:@"main" withExtension:@"momd"];
+        NSURL * modelURL = [[NSBundle mainBundle] URLForResource:@"words" withExtension:@"momd"];
         _managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
     }
     return _managedObjectModel;
@@ -40,7 +40,7 @@
 - (NSPersistentStoreCoordinator *) persistentStoreCoordinator
 {
     if (nil == _persistentStoreCoordinator) {
-        NSURL * storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"data.sqlite"];
+        NSURL * storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"words.sqlite"];
         NSError * error = nil;
         _persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
         if (![_persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType
@@ -75,6 +75,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    self.wordsList = [[NSMutableArray alloc] init];
     return YES;
 }
 							
