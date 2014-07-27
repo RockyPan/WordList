@@ -1,0 +1,472 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5C18FFC11984DFC40091DC51 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C18FFC01984DFC40091DC51 /* Foundation.framework */; };
+		5C18FFC31984DFC40091DC51 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C18FFC21984DFC40091DC51 /* CoreGraphics.framework */; };
+		5C18FFC51984DFC40091DC51 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C18FFC41984DFC40091DC51 /* UIKit.framework */; };
+		5C18FFCB1984DFC40091DC51 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5C18FFC91984DFC40091DC51 /* InfoPlist.strings */; };
+		5C18FFCD1984DFC40091DC51 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C18FFCC1984DFC40091DC51 /* main.m */; };
+		5C18FFD11984DFC40091DC51 /* TWAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C18FFD01984DFC40091DC51 /* TWAppDelegate.m */; };
+		5C18FFD41984DFC40091DC51 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C18FFD21984DFC40091DC51 /* Main.storyboard */; };
+		5C18FFD71984DFC40091DC51 /* TWViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C18FFD61984DFC40091DC51 /* TWViewController.m */; };
+		5C18FFD91984DFC40091DC51 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C18FFD81984DFC40091DC51 /* Images.xcassets */; };
+		5C18FFE01984DFC40091DC51 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C18FFDF1984DFC40091DC51 /* XCTest.framework */; };
+		5C18FFE11984DFC40091DC51 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C18FFC01984DFC40091DC51 /* Foundation.framework */; };
+		5C18FFE21984DFC40091DC51 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C18FFC41984DFC40091DC51 /* UIKit.framework */; };
+		5C18FFEA1984DFC40091DC51 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5C18FFE81984DFC40091DC51 /* InfoPlist.strings */; };
+		5C18FFEC1984DFC40091DC51 /* WordListTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C18FFEB1984DFC40091DC51 /* WordListTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5C18FFE31984DFC40091DC51 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5C18FFB51984DFC40091DC51 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5C18FFBC1984DFC40091DC51;
+			remoteInfo = WordList;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		5C18FFBD1984DFC40091DC51 /* WordList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WordList.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5C18FFC01984DFC40091DC51 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		5C18FFC21984DFC40091DC51 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		5C18FFC41984DFC40091DC51 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		5C18FFC81984DFC40091DC51 /* WordList-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WordList-Info.plist"; sourceTree = "<group>"; };
+		5C18FFCA1984DFC40091DC51 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		5C18FFCC1984DFC40091DC51 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		5C18FFCE1984DFC40091DC51 /* WordList-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WordList-Prefix.pch"; sourceTree = "<group>"; };
+		5C18FFCF1984DFC40091DC51 /* TWAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TWAppDelegate.h; sourceTree = "<group>"; };
+		5C18FFD01984DFC40091DC51 /* TWAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TWAppDelegate.m; sourceTree = "<group>"; };
+		5C18FFD31984DFC40091DC51 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5C18FFD51984DFC40091DC51 /* TWViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TWViewController.h; sourceTree = "<group>"; };
+		5C18FFD61984DFC40091DC51 /* TWViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TWViewController.m; sourceTree = "<group>"; };
+		5C18FFD81984DFC40091DC51 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		5C18FFDE1984DFC40091DC51 /* WordListTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WordListTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5C18FFDF1984DFC40091DC51 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		5C18FFE71984DFC40091DC51 /* WordListTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WordListTests-Info.plist"; sourceTree = "<group>"; };
+		5C18FFE91984DFC40091DC51 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		5C18FFEB1984DFC40091DC51 /* WordListTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WordListTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5C18FFBA1984DFC40091DC51 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5C18FFC31984DFC40091DC51 /* CoreGraphics.framework in Frameworks */,
+				5C18FFC51984DFC40091DC51 /* UIKit.framework in Frameworks */,
+				5C18FFC11984DFC40091DC51 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5C18FFDB1984DFC40091DC51 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5C18FFE01984DFC40091DC51 /* XCTest.framework in Frameworks */,
+				5C18FFE21984DFC40091DC51 /* UIKit.framework in Frameworks */,
+				5C18FFE11984DFC40091DC51 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5C18FFB41984DFC40091DC51 = {
+			isa = PBXGroup;
+			children = (
+				5C18FFC61984DFC40091DC51 /* WordList */,
+				5C18FFE51984DFC40091DC51 /* WordListTests */,
+				5C18FFBF1984DFC40091DC51 /* Frameworks */,
+				5C18FFBE1984DFC40091DC51 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5C18FFBE1984DFC40091DC51 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5C18FFBD1984DFC40091DC51 /* WordList.app */,
+				5C18FFDE1984DFC40091DC51 /* WordListTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5C18FFBF1984DFC40091DC51 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5C18FFC01984DFC40091DC51 /* Foundation.framework */,
+				5C18FFC21984DFC40091DC51 /* CoreGraphics.framework */,
+				5C18FFC41984DFC40091DC51 /* UIKit.framework */,
+				5C18FFDF1984DFC40091DC51 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5C18FFC61984DFC40091DC51 /* WordList */ = {
+			isa = PBXGroup;
+			children = (
+				5C18FFCF1984DFC40091DC51 /* TWAppDelegate.h */,
+				5C18FFD01984DFC40091DC51 /* TWAppDelegate.m */,
+				5C18FFD21984DFC40091DC51 /* Main.storyboard */,
+				5C18FFD51984DFC40091DC51 /* TWViewController.h */,
+				5C18FFD61984DFC40091DC51 /* TWViewController.m */,
+				5C18FFD81984DFC40091DC51 /* Images.xcassets */,
+				5C18FFC71984DFC40091DC51 /* Supporting Files */,
+			);
+			path = WordList;
+			sourceTree = "<group>";
+		};
+		5C18FFC71984DFC40091DC51 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5C18FFC81984DFC40091DC51 /* WordList-Info.plist */,
+				5C18FFC91984DFC40091DC51 /* InfoPlist.strings */,
+				5C18FFCC1984DFC40091DC51 /* main.m */,
+				5C18FFCE1984DFC40091DC51 /* WordList-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5C18FFE51984DFC40091DC51 /* WordListTests */ = {
+			isa = PBXGroup;
+			children = (
+				5C18FFEB1984DFC40091DC51 /* WordListTests.m */,
+				5C18FFE61984DFC40091DC51 /* Supporting Files */,
+			);
+			path = WordListTests;
+			sourceTree = "<group>";
+		};
+		5C18FFE61984DFC40091DC51 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5C18FFE71984DFC40091DC51 /* WordListTests-Info.plist */,
+				5C18FFE81984DFC40091DC51 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5C18FFBC1984DFC40091DC51 /* WordList */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5C18FFEF1984DFC40091DC51 /* Build configuration list for PBXNativeTarget "WordList" */;
+			buildPhases = (
+				5C18FFB91984DFC40091DC51 /* Sources */,
+				5C18FFBA1984DFC40091DC51 /* Frameworks */,
+				5C18FFBB1984DFC40091DC51 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WordList;
+			productName = WordList;
+			productReference = 5C18FFBD1984DFC40091DC51 /* WordList.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5C18FFDD1984DFC40091DC51 /* WordListTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5C18FFF21984DFC40091DC51 /* Build configuration list for PBXNativeTarget "WordListTests" */;
+			buildPhases = (
+				5C18FFDA1984DFC40091DC51 /* Sources */,
+				5C18FFDB1984DFC40091DC51 /* Frameworks */,
+				5C18FFDC1984DFC40091DC51 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5C18FFE41984DFC40091DC51 /* PBXTargetDependency */,
+			);
+			name = WordListTests;
+			productName = WordListTests;
+			productReference = 5C18FFDE1984DFC40091DC51 /* WordListTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5C18FFB51984DFC40091DC51 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = TW;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = TGD;
+				TargetAttributes = {
+					5C18FFDD1984DFC40091DC51 = {
+						TestTargetID = 5C18FFBC1984DFC40091DC51;
+					};
+				};
+			};
+			buildConfigurationList = 5C18FFB81984DFC40091DC51 /* Build configuration list for PBXProject "WordList" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5C18FFB41984DFC40091DC51;
+			productRefGroup = 5C18FFBE1984DFC40091DC51 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5C18FFBC1984DFC40091DC51 /* WordList */,
+				5C18FFDD1984DFC40091DC51 /* WordListTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5C18FFBB1984DFC40091DC51 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5C18FFD91984DFC40091DC51 /* Images.xcassets in Resources */,
+				5C18FFCB1984DFC40091DC51 /* InfoPlist.strings in Resources */,
+				5C18FFD41984DFC40091DC51 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5C18FFDC1984DFC40091DC51 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5C18FFEA1984DFC40091DC51 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5C18FFB91984DFC40091DC51 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5C18FFCD1984DFC40091DC51 /* main.m in Sources */,
+				5C18FFD11984DFC40091DC51 /* TWAppDelegate.m in Sources */,
+				5C18FFD71984DFC40091DC51 /* TWViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5C18FFDA1984DFC40091DC51 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5C18FFEC1984DFC40091DC51 /* WordListTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5C18FFE41984DFC40091DC51 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5C18FFBC1984DFC40091DC51 /* WordList */;
+			targetProxy = 5C18FFE31984DFC40091DC51 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		5C18FFC91984DFC40091DC51 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5C18FFCA1984DFC40091DC51 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		5C18FFD21984DFC40091DC51 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5C18FFD31984DFC40091DC51 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		5C18FFE81984DFC40091DC51 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5C18FFE91984DFC40091DC51 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5C18FFED1984DFC40091DC51 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		5C18FFEE1984DFC40091DC51 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5C18FFF01984DFC40091DC51 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "WordList/WordList-Prefix.pch";
+				INFOPLIST_FILE = "WordList/WordList-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		5C18FFF11984DFC40091DC51 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "WordList/WordList-Prefix.pch";
+				INFOPLIST_FILE = "WordList/WordList-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		5C18FFF31984DFC40091DC51 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/WordList.app/WordList";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "WordList/WordList-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "WordListTests/WordListTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		5C18FFF41984DFC40091DC51 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/WordList.app/WordList";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "WordList/WordList-Prefix.pch";
+				INFOPLIST_FILE = "WordListTests/WordListTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5C18FFB81984DFC40091DC51 /* Build configuration list for PBXProject "WordList" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5C18FFED1984DFC40091DC51 /* Debug */,
+				5C18FFEE1984DFC40091DC51 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5C18FFEF1984DFC40091DC51 /* Build configuration list for PBXNativeTarget "WordList" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5C18FFF01984DFC40091DC51 /* Debug */,
+				5C18FFF11984DFC40091DC51 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		5C18FFF21984DFC40091DC51 /* Build configuration list for PBXNativeTarget "WordListTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5C18FFF31984DFC40091DC51 /* Debug */,
+				5C18FFF41984DFC40091DC51 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5C18FFB51984DFC40091DC51 /* Project object */;
+}
