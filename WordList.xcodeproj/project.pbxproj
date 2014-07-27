@@ -21,6 +21,8 @@
 		5C18FFE21984DFC40091DC51 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C18FFC41984DFC40091DC51 /* UIKit.framework */; };
 		5C18FFEA1984DFC40091DC51 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5C18FFE81984DFC40091DC51 /* InfoPlist.strings */; };
 		5C18FFEC1984DFC40091DC51 /* WordListTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C18FFEB1984DFC40091DC51 /* WordListTests.m */; };
+		5C18FFF71984E5E00091DC51 /* words.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5C18FFF51984E5E00091DC51 /* words.xcdatamodeld */; };
+		5C18FFFA1984E8880091DC51 /* TWAddWordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C18FFF91984E8880091DC51 /* TWAddWordVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,9 @@
 		5C18FFE71984DFC40091DC51 /* WordListTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WordListTests-Info.plist"; sourceTree = "<group>"; };
 		5C18FFE91984DFC40091DC51 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5C18FFEB1984DFC40091DC51 /* WordListTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WordListTests.m; sourceTree = "<group>"; };
+		5C18FFF61984E5E00091DC51 /* words.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = words.xcdatamodel; sourceTree = "<group>"; };
+		5C18FFF81984E8880091DC51 /* TWAddWordVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWAddWordVC.h; sourceTree = "<group>"; };
+		5C18FFF91984E8880091DC51 /* TWAddWordVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWAddWordVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,8 +118,11 @@
 			isa = PBXGroup;
 			children = (
 				5C18FFCF1984DFC40091DC51 /* TWAppDelegate.h */,
+				5C18FFF51984E5E00091DC51 /* words.xcdatamodeld */,
 				5C18FFD01984DFC40091DC51 /* TWAppDelegate.m */,
 				5C18FFD21984DFC40091DC51 /* Main.storyboard */,
+				5C18FFF81984E8880091DC51 /* TWAddWordVC.h */,
+				5C18FFF91984E8880091DC51 /* TWAddWordVC.m */,
 				5C18FFD51984DFC40091DC51 /* TWViewController.h */,
 				5C18FFD61984DFC40091DC51 /* TWViewController.m */,
 				5C18FFD81984DFC40091DC51 /* Images.xcassets */,
@@ -251,7 +259,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				5C18FFCD1984DFC40091DC51 /* main.m in Sources */,
+				5C18FFF71984E5E00091DC51 /* words.xcdatamodeld in Sources */,
 				5C18FFD11984DFC40091DC51 /* TWAppDelegate.m in Sources */,
+				5C18FFFA1984E8880091DC51 /* TWAddWordVC.m in Sources */,
 				5C18FFD71984DFC40091DC51 /* TWViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -467,6 +477,19 @@
 			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		5C18FFF51984E5E00091DC51 /* words.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				5C18FFF61984E5E00091DC51 /* words.xcdatamodel */,
+			);
+			currentVersion = 5C18FFF61984E5E00091DC51 /* words.xcdatamodel */;
+			path = words.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 5C18FFB51984DFC40091DC51 /* Project object */;
 }
