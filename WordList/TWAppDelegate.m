@@ -75,7 +75,14 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
-    self.wordsList = [[NSMutableArray alloc] init];
+    NSFetchRequest * request = [[NSFetchRequest alloc] init];
+    NSEntityDescription * entity = [NSEntityDescription entityForName:@"Words" inManagedObjectContext:self.managedObjectContext];
+    [request setEntity:entity];
+    NSError * error = nil;
+    self.wordsObj = [[self.managedObjectContext executeFetchRequest:request error:&error] mutableCopy];
+
+    
+    //self.wordsList = [[NSMutableArray alloc] init];
     return YES;
 }
 							

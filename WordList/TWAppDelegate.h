@@ -16,7 +16,8 @@
 @property (readonly, strong, nonatomic) NSManagedObjectModel * managedObjectModel;
 @property (readonly, strong, nonatomic) NSPersistentStoreCoordinator * persistentStoreCoordinator;
 
-@property (nonatomic, strong) NSMutableArray * wordsList;
+//@property (nonatomic, strong) NSMutableArray * wordsList;
+@property (nonatomic, strong) NSMutableArray * wordsObj;
 
 - (void) saveContext;
 
