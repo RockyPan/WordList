@@ -23,6 +23,8 @@
 		5C18FFEC1984DFC40091DC51 /* WordListTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C18FFEB1984DFC40091DC51 /* WordListTests.m */; };
 		5C18FFF71984E5E00091DC51 /* words.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5C18FFF51984E5E00091DC51 /* words.xcdatamodeld */; };
 		5C18FFFA1984E8880091DC51 /* TWAddWordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C18FFF91984E8880091DC51 /* TWAddWordVC.m */; };
+		A870E9BF19867E87005585EF /* TWStudyVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A870E9BE19867E87005585EF /* TWStudyVC.m */; };
+		A870E9C11986815C005585EF /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A870E9C01986815C005585EF /* CoreData.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +60,9 @@
 		5C18FFF61984E5E00091DC51 /* words.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = words.xcdatamodel; sourceTree = "<group>"; };
 		5C18FFF81984E8880091DC51 /* TWAddWordVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWAddWordVC.h; sourceTree = "<group>"; };
 		5C18FFF91984E8880091DC51 /* TWAddWordVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWAddWordVC.m; sourceTree = "<group>"; };
+		A870E9BD19867E87005585EF /* TWStudyVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWStudyVC.h; sourceTree = "<group>"; };
+		A870E9BE19867E87005585EF /* TWStudyVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWStudyVC.m; sourceTree = "<group>"; };
+		A870E9C01986815C005585EF /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A870E9C11986815C005585EF /* CoreData.framework in Frameworks */,
 				5C18FFC31984DFC40091DC51 /* CoreGraphics.framework in Frameworks */,
 				5C18FFC51984DFC40091DC51 /* UIKit.framework in Frameworks */,
 				5C18FFC11984DFC40091DC51 /* Foundation.framework in Frameworks */,
@@ -106,6 +112,7 @@
 		5C18FFBF1984DFC40091DC51 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A870E9C01986815C005585EF /* CoreData.framework */,
 				5C18FFC01984DFC40091DC51 /* Foundation.framework */,
 				5C18FFC21984DFC40091DC51 /* CoreGraphics.framework */,
 				5C18FFC41984DFC40091DC51 /* UIKit.framework */,
@@ -119,6 +126,8 @@
 			children = (
 				5C18FFCF1984DFC40091DC51 /* TWAppDelegate.h */,
 				5C18FFF51984E5E00091DC51 /* words.xcdatamodeld */,
+				A870E9BD19867E87005585EF /* TWStudyVC.h */,
+				A870E9BE19867E87005585EF /* TWStudyVC.m */,
 				5C18FFD01984DFC40091DC51 /* TWAppDelegate.m */,
 				5C18FFD21984DFC40091DC51 /* Main.storyboard */,
 				5C18FFF81984E8880091DC51 /* TWAddWordVC.h */,
@@ -259,6 +268,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5C18FFCD1984DFC40091DC51 /* main.m in Sources */,
+				A870E9BF19867E87005585EF /* TWStudyVC.m in Sources */,
 				5C18FFF71984E5E00091DC51 /* words.xcdatamodeld in Sources */,
 				5C18FFD11984DFC40091DC51 /* TWAppDelegate.m in Sources */,
 				5C18FFFA1984E8880091DC51 /* TWAddWordVC.m in Sources */,
@@ -467,6 +477,7 @@
 				5C18FFF11984DFC40091DC51 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5C18FFF21984DFC40091DC51 /* Build configuration list for PBXNativeTarget "WordListTests" */ = {
 			isa = XCConfigurationList;
@@ -475,6 +486,7 @@
 				5C18FFF41984DFC40091DC51 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

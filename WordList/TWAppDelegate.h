@@ -20,5 +20,6 @@
 @property (nonatomic, strong) NSMutableArray * wordsObj;
 
 - (void) saveContext;
+- (NSMutableArray *) studyList;
 
 @end

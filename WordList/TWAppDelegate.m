@@ -67,6 +67,26 @@
     }
 }
 
+- (NSArray *)studyList {
+    NSMutableArray * res = [[NSMutableArray alloc] init];
+    if ([self.wordsObj count] < 20) {
+        for (NSManagedObject * value in self.wordsObj) {
+            [res addObject:value];
+        }
+    } else {
+        NSMutableArray * pool = [self.wordsObj copy];
+        for (int i = 0; i < 20; ++i) {
+            int span = [pool count] * ([pool count] + 1) / 2;
+            int idx = arc4random() % span + 1;
+            idx = sqrt(idx * 2);
+            idx = [pool count] - idx;
+            [res addObject:pool[idx]];
+            [pool removeObjectAtIndex:idx];
+        }
+    }
+    return res;
+}
+
 - (NSURL *)applicationDocumentsDirectory
 {
     return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
@@ -78,11 +98,13 @@
     NSFetchRequest * request = [[NSFetchRequest alloc] init];
     NSEntityDescription * entity = [NSEntityDescription entityForName:@"Words" inManagedObjectContext:self.managedObjectContext];
     [request setEntity:entity];
+    NSMutableArray * sorts = [[NSMutableArray alloc] init];
+    [sorts addObject:[[NSSortDescriptor alloc] initWithKey:@"familiarity" ascending:NO]];
+    [sorts addObject:[[NSSortDescriptor alloc] initWithKey:@"lastAccess" ascending:NO]];
+    [request setSortDescriptors:sorts];
     NSError * error = nil;
     self.wordsObj = [[self.managedObjectContext executeFetchRequest:request error:&error] mutableCopy];
-
     
-    //self.wordsList = [[NSMutableArray alloc] init];
     return YES;
 }
 							
