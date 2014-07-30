@@ -9,6 +9,8 @@
 #import "TWStudyVC.h"
 #import "TWAppDelegate.h"
 
+#import <CoreData/CoreData.h>
+
 @interface TWStudyVC ()
 
 @property (nonatomic, strong) NSMutableArray * words;
@@ -59,13 +61,15 @@
     UITableViewCell *cell = nil;
     if (indexPath.row < [self.words count]) {
         cell = [tableView dequeueReusableCellWithIdentifier:@"wordQuiz"];
-        cell.textLabel.text = [self.words[indexPath.row] valueForKey:@"word"];
+        NSString * str = [NSString stringWithFormat:@"%@\n%@", [self.words[indexPath.row] valueForKey:@"word"], [self.words[indexPath.row] valueForKey:@"meaning"]];
+        UILabel * label = (UILabel *)[cell viewWithTag:101];
+        label.text = str;
     } else {
         cell = [tableView dequeueReusableCellWithIdentifier:@"button"];
     }
     
 #ifdef DEBUG
-    NSLog(@"Cell recursive description:\n\n%@\n\n", [cell performSelector:@selector(recursiveDescription)]);
+//    NSLog(@"Cell recursive description:\n\n%@\n\n", [cell performSelector:@selector(recursiveDescription)]);
 #endif
     
     return cell;
@@ -126,11 +130,27 @@
 }
 
 - (IBAction)wrong:(UIButton *)sender {
-    UITableViewCell * cell = (UITableViewCell *)[[[sender superview] superview] superview];
-    NSLog(@"wrong on line %d", [self.tableView indexPathForCell:cell].row);
+    [self processButton:sender withOffset:-1];
 }
 
 - (IBAction)right:(UIButton *)sender {
-    NSLog(@"right");
+    [self processButton:sender withOffset:1];
 }
+
+- (void)processButton:(UIButton *)button withOffset:(int)offset {
+    UITableViewCell * cell = (UITableViewCell *)[[[button superview] superview] superview];
+    NSInteger idx = [self.tableView indexPathForCell:cell].row;
+    NSManagedObject * obj = self.words[idx];
+    [self updateWord:obj familarity:offset];
+    [self.words removeObjectAtIndex:idx];
+    [self.tableView deleteRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:idx inSection:0]] withRowAnimation:UITableViewRowAnimationFade];
+}
+
+- (void)updateWord:(NSManagedObject *)obj familarity:(int)offset {
+    int f = ((NSNumber *)[obj valueForKey:@"familiarity"]).intValue;
+    f += offset;
+    [obj setValue:[NSNumber numberWithInt:f] forKey:@"familiarity"];
+    [self.appDelegate saveContext];
+}
+
 @end

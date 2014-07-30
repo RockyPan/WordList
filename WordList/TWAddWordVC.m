@@ -211,6 +211,8 @@
     NSManagedObject * obj = [NSEntityDescription insertNewObjectForEntityForName:@"Words" inManagedObjectContext:context];
     [obj setValue:self.word forKey:@"word"];
     [obj setValue:self.meaning forKey:@"meaning"];
+    [obj setValue:[NSDate date] forKey:@"lastAccess"];
+    [obj setValue:[NSNumber numberWithInt:0] forKey:@"familiarity"];
     [self.appDelegate saveContext];
     [self.appDelegate.wordsObj addObject:obj];
     //[self.appDelegate.wordsList addObject:self.word];
