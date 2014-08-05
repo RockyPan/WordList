@@ -4,10 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
-        <!--StudyVC - 学习-->
+        <!--ReciteVC - 默写-->
         <scene sceneID="0pb-9f-dqR">
             <objects>
-                <tableViewController id="PsG-FN-R4D" customClass="TWStudyVC" sceneMemberID="viewController">
+                <tableViewController id="PsG-FN-R4D" customClass="TWReciteVC" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="96v-j1-96k">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -82,7 +82,7 @@
                             <outlet property="delegate" destination="PsG-FN-R4D" id="4LL-ty-7xq"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="学习" id="ZCE-mJ-Uff"/>
+                    <tabBarItem key="tabBarItem" title="默写" id="ZCE-mJ-Uff"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="10h-3e-IqB" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -100,8 +100,10 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
+                        <segue destination="F8y-Iu-E3r" kind="relationship" relationship="viewControllers" id="50P-rS-gBc"/>
                         <segue destination="PsG-FN-R4D" kind="relationship" relationship="viewControllers" id="nGS-Mf-tN0"/>
                         <segue destination="EBz-0O-QO0" kind="relationship" relationship="viewControllers" id="YRQ-9r-Aix"/>
+                        <segue destination="fqp-Pv-NO0" kind="relationship" relationship="viewControllers" id="RGL-3y-Emn"/>
                         <segue destination="Oc6-aj-v28" kind="relationship" relationship="viewControllers" id="8KK-uk-Z5u"/>
                     </connections>
                 </tabBarController>
@@ -109,10 +111,10 @@
             </objects>
             <point key="canvasLocation" x="-63" y="371"/>
         </scene>
-        <!--Table View Controller - 设置-->
+        <!--SetupVC - 设置-->
         <scene sceneID="Gp5-M3-aAc">
             <objects>
-                <tableViewController id="Oc6-aj-v28" sceneMemberID="viewController">
+                <tableViewController id="Oc6-aj-v28" customClass="TWSetupVC" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="UnN-q7-dy5">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -131,10 +133,13 @@
                                                     <rect key="frame" x="20" y="8" width="280" height="29"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <segments>
+                                                        <segment title="全部"/>
                                                         <segment title="单词"/>
                                                         <segment title="词义"/>
-                                                        <segment title="全部"/>
                                                     </segments>
+                                                    <connections>
+                                                        <action selector="displayTypeChange:" destination="Oc6-aj-v28" eventType="valueChanged" id="nqU-o8-vdA"/>
+                                                    </connections>
                                                 </segmentedControl>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -189,10 +194,92 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="设置" id="Te2-Lo-TCM"/>
+                    <connections>
+                        <outlet property="displayType" destination="Neu-kU-53r" id="L8c-ZN-BLo"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fsp-0Q-lOM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-26" y="1132"/>
+        </scene>
+        <!--StudyVC - 学习-->
+        <scene sceneID="qqz-6f-ot1">
+            <objects>
+                <viewController id="F8y-Iu-E3r" customClass="TWStudyVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="agv-1a-g9C"/>
+                        <viewControllerLayoutGuide type="bottom" id="lwx-RE-N3g"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ZIW-6Z-5Th">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4gs-HV-4Ry">
+                                <rect key="frame" x="20" y="111" width="280" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="31"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="n2B-g3-v0P">
+                                <rect key="frame" x="20" y="155" width="280" height="72"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="31"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mdw-Sl-4WR">
+                                <rect key="frame" x="20" y="425" width="50" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                <state key="normal" title="错">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="wrong:" destination="F8y-Iu-E3r" eventType="touchUpInside" id="o1p-bx-P0V"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EEY-GL-NR6">
+                                <rect key="frame" x="250" y="425" width="50" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.40000000600000002" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                <state key="normal" title="对">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="right:" destination="F8y-Iu-E3r" eventType="touchUpInside" id="jsu-xs-DVv"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sbg-Pk-Qzx">
+                                <rect key="frame" x="125" y="425" width="71" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.40000000596046448" green="0.80000001192092896" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                <state key="normal" title="查看">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="check:" destination="F8y-Iu-E3r" eventType="touchUpInside" id="UQo-Le-LFK"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="学习" id="ExG-Ih-8EH"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+                    <connections>
+                        <outlet property="textMeaning" destination="n2B-g3-v0P" id="pmB-yS-SN8"/>
+                        <outlet property="textWord" destination="4gs-HV-4Ry" id="r6a-Iu-nMa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2hI-bd-TOp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="467" y="812"/>
         </scene>
         <!--Add WordVC - 添加-->
         <scene sceneID="vDN-2g-COl">
@@ -267,7 +354,36 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kx7-9E-yc9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="467" y="812"/>
+            <point key="canvasLocation" x="853" y="98"/>
+        </scene>
+        <!--Table View Controller - 浏览-->
+        <scene sceneID="kKd-Cq-JCG">
+            <objects>
+                <tableViewController id="fqp-Pv-NO0" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="dgm-ER-ajp">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="pgA-Ak-BAd">
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pgA-Ak-BAd" id="FR8-jm-Fow">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="fqp-Pv-NO0" id="sn7-fy-d22"/>
+                            <outlet property="delegate" destination="fqp-Pv-NO0" id="lIj-Bc-4yt"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="浏览" id="QVu-OQ-3Hv"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AJd-8z-KAW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="853" y="812"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

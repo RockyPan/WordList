@@ -23,7 +23,9 @@
 		5C18FFEC1984DFC40091DC51 /* WordListTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C18FFEB1984DFC40091DC51 /* WordListTests.m */; };
 		5C18FFF71984E5E00091DC51 /* words.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5C18FFF51984E5E00091DC51 /* words.xcdatamodeld */; };
 		5C18FFFA1984E8880091DC51 /* TWAddWordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C18FFF91984E8880091DC51 /* TWAddWordVC.m */; };
-		A870E9BF19867E87005585EF /* TWStudyVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A870E9BE19867E87005585EF /* TWStudyVC.m */; };
+		5C6AF4691990B0AA00B322B1 /* TWStudyVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C6AF4681990B0AA00B322B1 /* TWStudyVC.m */; };
+		5C6AF46C1990D06700B322B1 /* TWSetupVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C6AF46B1990D06700B322B1 /* TWSetupVC.m */; };
+		A870E9BF19867E87005585EF /* TWReciteVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A870E9BE19867E87005585EF /* TWReciteVC.m */; };
 		A870E9C11986815C005585EF /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A870E9C01986815C005585EF /* CoreData.framework */; };
 /* End PBXBuildFile section */
 
@@ -60,8 +62,12 @@
 		5C18FFF61984E5E00091DC51 /* words.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = words.xcdatamodel; sourceTree = "<group>"; };
 		5C18FFF81984E8880091DC51 /* TWAddWordVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWAddWordVC.h; sourceTree = "<group>"; };
 		5C18FFF91984E8880091DC51 /* TWAddWordVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWAddWordVC.m; sourceTree = "<group>"; };
-		A870E9BD19867E87005585EF /* TWStudyVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWStudyVC.h; sourceTree = "<group>"; };
-		A870E9BE19867E87005585EF /* TWStudyVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWStudyVC.m; sourceTree = "<group>"; };
+		5C6AF4671990B0AA00B322B1 /* TWStudyVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWStudyVC.h; sourceTree = "<group>"; };
+		5C6AF4681990B0AA00B322B1 /* TWStudyVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWStudyVC.m; sourceTree = "<group>"; };
+		5C6AF46A1990D06700B322B1 /* TWSetupVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWSetupVC.h; sourceTree = "<group>"; };
+		5C6AF46B1990D06700B322B1 /* TWSetupVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWSetupVC.m; sourceTree = "<group>"; };
+		A870E9BD19867E87005585EF /* TWReciteVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWReciteVC.h; sourceTree = "<group>"; };
+		A870E9BE19867E87005585EF /* TWReciteVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWReciteVC.m; sourceTree = "<group>"; };
 		A870E9C01986815C005585EF /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -126,8 +132,12 @@
 			children = (
 				5C18FFCF1984DFC40091DC51 /* TWAppDelegate.h */,
 				5C18FFF51984E5E00091DC51 /* words.xcdatamodeld */,
-				A870E9BD19867E87005585EF /* TWStudyVC.h */,
-				A870E9BE19867E87005585EF /* TWStudyVC.m */,
+				A870E9BD19867E87005585EF /* TWReciteVC.h */,
+				5C6AF4671990B0AA00B322B1 /* TWStudyVC.h */,
+				5C6AF4681990B0AA00B322B1 /* TWStudyVC.m */,
+				A870E9BE19867E87005585EF /* TWReciteVC.m */,
+				5C6AF46A1990D06700B322B1 /* TWSetupVC.h */,
+				5C6AF46B1990D06700B322B1 /* TWSetupVC.m */,
 				5C18FFD01984DFC40091DC51 /* TWAppDelegate.m */,
 				5C18FFD21984DFC40091DC51 /* Main.storyboard */,
 				5C18FFF81984E8880091DC51 /* TWAddWordVC.h */,
@@ -267,8 +277,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C6AF4691990B0AA00B322B1 /* TWStudyVC.m in Sources */,
 				5C18FFCD1984DFC40091DC51 /* main.m in Sources */,
-				A870E9BF19867E87005585EF /* TWStudyVC.m in Sources */,
+				A870E9BF19867E87005585EF /* TWReciteVC.m in Sources */,
+				5C6AF46C1990D06700B322B1 /* TWSetupVC.m in Sources */,
 				5C18FFF71984E5E00091DC51 /* words.xcdatamodeld in Sources */,
 				5C18FFD11984DFC40091DC51 /* TWAppDelegate.m in Sources */,
 				5C18FFFA1984E8880091DC51 /* TWAddWordVC.m in Sources */,
@@ -400,6 +412,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WordList/WordList-Prefix.pch";
 				INFOPLIST_FILE = "WordList/WordList-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -413,6 +426,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WordList/WordList-Prefix.pch";
 				INFOPLIST_FILE = "WordList/WordList-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

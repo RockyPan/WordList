@@ -76,15 +76,29 @@
     } else {
         NSMutableArray * pool = [self.wordsObj copy];
         for (int i = 0; i < 20; ++i) {
-            int span = [pool count] * ([pool count] + 1) / 2;
-            int idx = arc4random() % span + 1;
-            idx = sqrt(idx * 2);
-            idx = [pool count] - idx;
+            NSInteger idx = [self randomIndexInRang:[pool count]];
             [res addObject:pool[idx]];
             [pool removeObjectAtIndex:idx];
         }
     }
     return res;
+}
+
+/**
+ *  生成一个随机值，随机数在指定的范围内会非常靠前，越靠前权重越大
+ *
+ *  @param rang 范围的上限，下限总是从0开始
+ *
+ *  @return 生成的随机数
+ */
+- (NSInteger) randomIndexInRang:(NSInteger)rang {
+    NSInteger idx = 0;
+    
+    long span = rang * (rang + 1) / 2;
+    idx = arc4random() % span + 1;
+    idx = sqrt(idx *2);
+    idx = rang - idx;
+    return idx;
 }
 
 - (NSURL *)applicationDocumentsDirectory
@@ -98,12 +112,13 @@
     NSFetchRequest * request = [[NSFetchRequest alloc] init];
     NSEntityDescription * entity = [NSEntityDescription entityForName:@"Words" inManagedObjectContext:self.managedObjectContext];
     [request setEntity:entity];
-    NSMutableArray * sorts = [[NSMutableArray alloc] init];
-    [sorts addObject:[[NSSortDescriptor alloc] initWithKey:@"familiarity" ascending:NO]];
-    [sorts addObject:[[NSSortDescriptor alloc] initWithKey:@"lastAccess" ascending:NO]];
-    [request setSortDescriptors:sorts];
+//    NSMutableArray * sorts = [[NSMutableArray alloc] init];
+//    [sorts addObject:[[NSSortDescriptor alloc] initWithKey:@"familiarity" ascending:NO]];
+//    [sorts addObject:[[NSSortDescriptor alloc] initWithKey:@"lastAccess" ascending:NO]];
+//    [request setSortDescriptors:sorts];
     NSError * error = nil;
     self.wordsObj = [[self.managedObjectContext executeFetchRequest:request error:&error] mutableCopy];
+    [self sortWords];
     
     return YES;
 }
@@ -133,6 +148,18 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (void)sortWords {
+    NSMutableArray * sorts = [[NSMutableArray alloc] init];
+    [sorts addObject:[[NSSortDescriptor alloc] initWithKey:@"familiarity" ascending:NO]];
+    [sorts addObject:[[NSSortDescriptor alloc] initWithKey:@"lastAccess" ascending:NO]];
+    [self.wordsObj sortUsingDescriptors:sorts];
+}
+
+- (NSManagedObject *)randomWord {
+    NSManagedObject * res = self.wordsObj[[self randomIndexInRang:[self.wordsObj count]]];
+    return res;
 }
 
 @end
