@@ -74,7 +74,7 @@
             [res addObject:value];
         }
     } else {
-        NSMutableArray * pool = [self.wordsObj copy];
+        NSMutableArray * pool = [self.wordsObj mutableCopy];
         for (int i = 0; i < 20; ++i) {
             NSInteger idx = [self randomIndexInRang:[pool count]];
             [res addObject:pool[idx]];

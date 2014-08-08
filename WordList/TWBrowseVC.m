@@ -33,6 +33,10 @@
     self.appDelegate = (TWAppDelegate *)[UIApplication sharedApplication].delegate;
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [self.tableView reloadData];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -55,12 +59,20 @@
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cellWord" forIndexPath:indexPath];
     NSManagedObject * obj = self.appDelegate.wordsObj[indexPath.row];
-    NSString * str = [NSString stringWithFormat:@"%@ [%@] %@\n%@",
-                    [obj valueForKey:@"word"],
-                    [obj valueForKey:@"familiarity"],
-                    [obj valueForKey:@"lastAccess"],
-                    [obj valueForKey:@"meaning"]];
-    cell.textLabel.text = str;
+//    NSString * str = [NSString stringWithFormat:@"%@ [%@] %@\n%@",
+//                    [obj valueForKey:@"word"],
+//                    [obj valueForKey:@"familiarity"],
+//                    [obj valueForKey:@"lastAccess"],
+//                    [obj valueForKey:@"meaning"]];
+    NSString * word = [NSString stringWithFormat:@"%@\n%@",
+                       [obj valueForKey:@"word"],
+                       [obj valueForKey:@"meaning"]];
+    NSString * info = [NSString stringWithFormat:@"熟悉度：[%@]\n%@",
+                       [obj valueForKey:@"familiarity"],
+                       [obj valueForKey:@"lastAccess"]];
+    ((UILabel *)[cell viewWithTag:101]).text = word;
+    ((UILabel *)[cell viewWithTag:102]).text = info;
+//    cell.textLabel.text = str;
     
     return cell;
 }

@@ -34,8 +34,13 @@
     [super viewDidLoad];
 
     self.appDelegate = (TWAppDelegate *)[UIApplication sharedApplication].delegate;
-    self.words = [self.appDelegate studyList];
+//    self.words = [self.appDelegate studyList];
     
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    self.words = [self.appDelegate studyList];
 }
 
 - (void)didReceiveMemoryWarning
