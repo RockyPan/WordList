@@ -19,7 +19,9 @@
 
 @property (nonatomic, strong) NSMutableArray * wordsObj;
 
-- (void) saveContext;
+- (void)saveContext;
+- (NSURL *)applicationDocumentsDirectory;
+- (void)loadWords;
 
 /**
  *  从单词对象数组中随机抽取20个单词，排序越前权重越大。

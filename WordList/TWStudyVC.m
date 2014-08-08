@@ -34,6 +34,10 @@ BOOL isWord;
     [super viewDidLoad];
 
     self.appDelegate = (TWAppDelegate *)[UIApplication sharedApplication].delegate;
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
     [self displayWord];
 }
 
@@ -86,6 +90,7 @@ BOOL isWord;
 
 - (void) displayWord {
     NSManagedObject * wordObj = [self.appDelegate randomWord];
+    if (nil == wordObj) return;
     for ( ; wordObj == self.curWordObj;  ) {
         wordObj = [self.appDelegate randomWord];
     }

@@ -12,5 +12,7 @@
 
 @property (weak, nonatomic) IBOutlet UISegmentedControl *displayType;
 - (IBAction)displayTypeChange:(id)sender;
+- (IBAction)export2File:(id)sender;
+- (IBAction)importFromFile:(id)sender;
 
 @end

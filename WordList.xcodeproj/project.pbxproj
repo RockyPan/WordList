@@ -25,6 +25,7 @@
 		5C18FFFA1984E8880091DC51 /* TWAddWordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C18FFF91984E8880091DC51 /* TWAddWordVC.m */; };
 		5C6AF4691990B0AA00B322B1 /* TWStudyVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C6AF4681990B0AA00B322B1 /* TWStudyVC.m */; };
 		5C6AF46C1990D06700B322B1 /* TWSetupVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C6AF46B1990D06700B322B1 /* TWSetupVC.m */; };
+		5C6AF46F199361A100B322B1 /* TWBrowseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C6AF46E199361A100B322B1 /* TWBrowseVC.m */; };
 		A870E9BF19867E87005585EF /* TWReciteVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A870E9BE19867E87005585EF /* TWReciteVC.m */; };
 		A870E9C11986815C005585EF /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A870E9C01986815C005585EF /* CoreData.framework */; };
 /* End PBXBuildFile section */
@@ -66,6 +67,8 @@
 		5C6AF4681990B0AA00B322B1 /* TWStudyVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWStudyVC.m; sourceTree = "<group>"; };
 		5C6AF46A1990D06700B322B1 /* TWSetupVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWSetupVC.h; sourceTree = "<group>"; };
 		5C6AF46B1990D06700B322B1 /* TWSetupVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWSetupVC.m; sourceTree = "<group>"; };
+		5C6AF46D199361A100B322B1 /* TWBrowseVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWBrowseVC.h; sourceTree = "<group>"; };
+		5C6AF46E199361A100B322B1 /* TWBrowseVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWBrowseVC.m; sourceTree = "<group>"; };
 		A870E9BD19867E87005585EF /* TWReciteVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWReciteVC.h; sourceTree = "<group>"; };
 		A870E9BE19867E87005585EF /* TWReciteVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWReciteVC.m; sourceTree = "<group>"; };
 		A870E9C01986815C005585EF /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -140,6 +143,8 @@
 				5C6AF46B1990D06700B322B1 /* TWSetupVC.m */,
 				5C18FFD01984DFC40091DC51 /* TWAppDelegate.m */,
 				5C18FFD21984DFC40091DC51 /* Main.storyboard */,
+				5C6AF46D199361A100B322B1 /* TWBrowseVC.h */,
+				5C6AF46E199361A100B322B1 /* TWBrowseVC.m */,
 				5C18FFF81984E8880091DC51 /* TWAddWordVC.h */,
 				5C18FFF91984E8880091DC51 /* TWAddWordVC.m */,
 				5C18FFD51984DFC40091DC51 /* TWViewController.h */,
@@ -278,6 +283,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5C6AF4691990B0AA00B322B1 /* TWStudyVC.m in Sources */,
+				5C6AF46F199361A100B322B1 /* TWBrowseVC.m in Sources */,
 				5C18FFCD1984DFC40091DC51 /* main.m in Sources */,
 				A870E9BF19867E87005585EF /* TWReciteVC.m in Sources */,
 				5C6AF46C1990D06700B322B1 /* TWSetupVC.m in Sources */,

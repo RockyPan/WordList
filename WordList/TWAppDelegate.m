@@ -93,11 +93,23 @@
  */
 - (NSInteger) randomIndexInRang:(NSInteger)rang {
     NSInteger idx = 0;
-    
     long span = rang * (rang + 1) / 2;
     idx = arc4random() % span + 1;
-    idx = sqrt(idx *2);
-    idx = rang - idx;
+//    idx = sqrt(idx *2);
+//    idx = rang - idx;
+//    
+//    NSLog(@"随机数%ld 上限%ld", idx, rang);
+    
+    
+    for (long i = rang; i >= 1; --i) {
+        if (idx > i) {
+            idx -= i;
+        } else {
+            idx = rang - i;
+            break;
+        }
+    }
+    
     return idx;
 }
 
@@ -106,9 +118,27 @@
     return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
 }
 
+- (void)testRandomNumber {
+    int res[100] = {0};
+    for (int i = 0; i < 100000; ++i) {
+        NSInteger rand = [self randomIndexInRang:100];
+        ++res[rand];
+    }
+    for (int i = 0; i < 100; ++i) {
+        NSLog(@"%d\t共%d个", i, res[i]);
+    }
+}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    [self loadWords];
+    
+//    [self testRandomNumber];
+    
+    return YES;
+}
+
+- (void)loadWords {
     NSFetchRequest * request = [[NSFetchRequest alloc] init];
     NSEntityDescription * entity = [NSEntityDescription entityForName:@"Words" inManagedObjectContext:self.managedObjectContext];
     [request setEntity:entity];
@@ -120,7 +150,17 @@
     self.wordsObj = [[self.managedObjectContext executeFetchRequest:request error:&error] mutableCopy];
     [self sortWords];
     
-    return YES;
+    [self logWords];
+}
+
+- (void)logWords {
+    for (NSManagedObject * value in self.wordsObj) {
+        NSLog(@"%@ %@ %@ %@",
+              [value valueForKey:@"word"],
+              [value valueForKey:@"familiarity"],
+              [value valueForKey:@"lastAccess"],
+              [value valueForKey:@"meaning"]);
+    }
 }
 							
 - (void)applicationWillResignActive:(UIApplication *)application
@@ -152,12 +192,13 @@
 
 - (void)sortWords {
     NSMutableArray * sorts = [[NSMutableArray alloc] init];
-    [sorts addObject:[[NSSortDescriptor alloc] initWithKey:@"familiarity" ascending:NO]];
-    [sorts addObject:[[NSSortDescriptor alloc] initWithKey:@"lastAccess" ascending:NO]];
+    [sorts addObject:[[NSSortDescriptor alloc] initWithKey:@"familiarity" ascending:YES]];
+    [sorts addObject:[[NSSortDescriptor alloc] initWithKey:@"lastAccess" ascending:YESx]];
     [self.wordsObj sortUsingDescriptors:sorts];
 }
 
 - (NSManagedObject *)randomWord {
+    if (0 == [self.wordsObj count]) return nil;
     NSManagedObject * res = self.wordsObj[[self randomIndexInRang:[self.wordsObj count]]];
     return res;
 }
