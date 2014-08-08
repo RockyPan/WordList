@@ -193,7 +193,7 @@
 - (void)sortWords {
     NSMutableArray * sorts = [[NSMutableArray alloc] init];
     [sorts addObject:[[NSSortDescriptor alloc] initWithKey:@"familiarity" ascending:YES]];
-    [sorts addObject:[[NSSortDescriptor alloc] initWithKey:@"lastAccess" ascending:YESx]];
+    [sorts addObject:[[NSSortDescriptor alloc] initWithKey:@"lastAccess" ascending:YES]];
     [self.wordsObj sortUsingDescriptors:sorts];
 }
 
