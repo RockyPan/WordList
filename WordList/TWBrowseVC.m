@@ -67,9 +67,12 @@
     NSString * word = [NSString stringWithFormat:@"%@\n%@",
                        [obj valueForKey:@"word"],
                        [obj valueForKey:@"meaning"]];
+    NSDate * lastAcess = [obj valueForKey:@"lastAccess"];
+    NSDateFormatter * df = [[NSDateFormatter alloc] init];
+    [df setDateFormat:@"MM月dd日HH时"];
     NSString * info = [NSString stringWithFormat:@"熟悉度：[%@]\n%@",
                        [obj valueForKey:@"familiarity"],
-                       [obj valueForKey:@"lastAccess"]];
+                       [df stringFromDate:lastAcess]];
     ((UILabel *)[cell viewWithTag:101]).text = word;
     ((UILabel *)[cell viewWithTag:102]).text = info;
 //    cell.textLabel.text = str;
